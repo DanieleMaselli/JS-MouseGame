@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#game-container {
+    
+    font-family: 'Space Grotesk', sans-serif;
+    cursor: none;
+    font-size: 23px;
+    
+}
+
+
+#game-screen {
+    display: flex;
+    padding: 30px;
+    background-color: #ebebeb;
+
+
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    
+}
+
+
+
+
+
+
+

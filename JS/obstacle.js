@@ -1,0 +1,6 @@
+class Obstacle {
+    constructor() {
+        
+    }
+}
+
