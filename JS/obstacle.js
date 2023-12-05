@@ -8,15 +8,17 @@ class Obstacle {
         const maxHeight = rect.bottom - 100;
         const minWidth = rect.left + 100;
         const minHeight = rect.top + 100;
+        const bottom = rect.bottom;
         
         ///this.cheeseArray = [];
         let x = getRandomInt(minWidth,maxWidth);
         let y = getRandomInt(minHeight,maxHeight);
         this.width = 250;
-        this.top = y;
+        this.top = maxHeight;
         this.left = Math.floor(Math.random() * maxWidth)
         this.top = -100
         this.element = document.createElement('img');
+        console.log(this.element)
         this.element.src = 'Images/cat.png';
         this.element.classList = 'cat'
         this.element.style.position = 'absolute';
@@ -24,16 +26,13 @@ class Obstacle {
         this.element.style.top = `${this.top}px`;
         this.element.style.left = `${this.left}px`;
         this.gameScreen.appendChild(this.element);  
+
+      
     }
 
     move() {
         this.top += 4
         this.updatePosition()
-
-        if(this.element > maxHeight) {
-            this.element
-        }
-
     }
     
       updatePosition() {
