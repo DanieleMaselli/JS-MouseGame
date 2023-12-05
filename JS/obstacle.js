@@ -27,11 +27,14 @@ class Obstacle {
         this.element.style.left = `${this.left}px`;
         this.gameScreen.appendChild(this.element);  
 
-      
     }
 
     move() {
         this.top += 4
+
+        if(this.top > 800) {
+            this.element.style.display = 'hide'
+        }
         this.updatePosition()
     }
     
