@@ -5,7 +5,7 @@ class Mouse {
         this.mouseY = 0;
         this.width = 50;
         this.element = document.createElement('img');
-        this.element.src = '../Images/mice.png';
+        this.element.src = 'Images/mice.png';
         this.element.style.position = 'absolute';
         this.element.style.width = `${this.width}px`
         this.gameScreen.appendChild(this.element);

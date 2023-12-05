@@ -10,19 +10,16 @@ class Game {
         this.score = 0;
         this.lives = 3
         //this.cheese = new Cheese(this.gameScreen);
-    
+        this.obstacles = [];
         this.cheeseArray = [];
         
         for (let i = 0; i < 5; i++) {
            // new Cheese(this.gameScreen);
             //console.log(this.cheeseArray)
             this.cheeseArray.push(new Cheese(this.gameScreen));       
-            //console.log(this.cheeseArray)   
-
-            
+            //console.log(this.cheeseArray)              
         }
     }
-
 
     update(){
         this.gameScreen.style.height = `${this.height}vh`;
@@ -53,7 +50,17 @@ class Game {
             }
         }
 
-        requestAnimationFrame(() => this.gameloop())
+        const nextObstacles = []
+        this.obstacles.forEach(currentObstacle => {
+            currentObstacle.move()
+        })
+
+        if (this.animateId % 40 === 0) {
+            this.obstacles.push(new Obstacle(this.gameScreen))
+          }
+      
+
+        this.animateId = requestAnimationFrame(() => this.gameloop())
     }  
 }
 

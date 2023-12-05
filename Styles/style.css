@@ -8,7 +8,7 @@
     
     font-family: 'Space Grotesk', sans-serif;
     cursor: none;
-    font-size: 23px;
+    font-size: 27px;
     
 }
 
@@ -17,6 +17,7 @@
     display: flex;
     padding: 30px;
     background-color: #ebebeb;
+    cursor: none;
 
 
 
