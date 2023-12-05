@@ -10,24 +10,29 @@
 </head>
 <body>
     <main>
-           <div id="game-container">
-           </div>
-
-            <nav>
+           
+            <nav id="navBar">
                 <ul>CheesyMouse</ul>
-                
-                <ul>Score: <span id="score">0</span></ul>
-
+                <ul class="score">Score: <span id="score">0</span></ul>
+                <ul>Lives: <span id="lives">3</span></ul>
             </nav>
 
-            <div id="game-screen">
-
+            <div id="game-screen"></div>
+       
+            <div id="start-screen">
+                <img src="Images/mice.png" class="start-img">
+                <h1>CheesyMouse</h1>
+                <button id="start">Start eating cheeseeee!</button>
             </div>
-
-        <div id="start-screen"></div>
-        <div id="end-screen"></div>
+          
+            <div id="end-screen">
+                <img src="Images/gameover.png" class="end-img">
+                <h1>Game-Over</h1>
+                <button id="restart">Start again</button>
+            </div>
       
     </main>
+
     <script type="text/javascript"  src="JS/cheese.js"></script>   
     <script type="text/javascript"  src="JS/mouse.js"></script> 
     <script type="text/javascript"  src="JS/obstacle.js"></script>   

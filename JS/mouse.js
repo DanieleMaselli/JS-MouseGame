@@ -27,6 +27,7 @@ class Mouse {
     eatCheese(cheese) {
         const playerRect = this.element.getBoundingClientRect()
         const cheeseRect = cheese.element.getBoundingClientRect()
+        //const obstacle = obstacle.element.getBoundingClientRect();
              
         if (
           playerRect.left < cheeseRect.right &&
@@ -42,6 +43,27 @@ class Mouse {
       }
 
     }
+
+    //collision
+    obstacleCat(obst) {
+      const playerRect = this.element.getBoundingClientRect()
+      const obstacleRect = obst.element.getBoundingClientRect()
+      //const obstacle = obstacle.element.getBoundingClientRect();
+           
+      if (
+        playerRect.left < obstacleRect.right &&
+        playerRect.right > obstacleRect.left &&
+        playerRect.top < obstacleRect.bottom &&
+        playerRect.bottom > obstacleRect.top
+      ) {
+    
+    //cheese.element.remove()
+    return true
+    } else {
+    return false
+    }
+
+  }
     
 }
 
