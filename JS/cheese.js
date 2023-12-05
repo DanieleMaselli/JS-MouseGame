@@ -15,7 +15,7 @@ class Cheese {
         this.top = y;
         this.left = x;
         this.element = document.createElement('img');
-        this.element.src = '../Images/cheese.png';
+        this.element.src = 'Images/cheese.png';
         this.element.classList = 'cheese'
         this.element.style.position = 'absolute';
         this.element.style.width = `${this.width}px`;

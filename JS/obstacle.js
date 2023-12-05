@@ -16,7 +16,7 @@ class Obstacle {
         this.left = Math.floor(Math.random() * maxWidth)
         this.top = -100
         this.element = document.createElement('img');
-        this.element.src = '../Images/cat.png';
+        this.element.src = 'Images/cat.png';
         this.element.classList = 'cat'
         this.element.style.position = 'absolute';
         this.element.style.width = `${this.width}px`;
