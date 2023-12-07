@@ -11,7 +11,7 @@ class Obstacle {
         const bottom = rect.bottom - 110;
         let x = getRandomInt(minWidth,maxWidth);
         let y = getRandomInt(minHeight,maxHeight);
-        this.width = 160;
+        this.width = 150;
         this.top = maxHeight;
         this.bottom = bottom
         this.left = Math.floor(Math.random() * maxWidth)
