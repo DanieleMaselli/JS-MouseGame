@@ -5,7 +5,6 @@ class Game {
         this.endScreen = document.getElementById('end-screen')
         this.navBar = document.getElementById('navBar')
         this.height = 80;
-        //this.width = 100;
         this.mouse = null;
         this.animateId = null;
         this.gameScreen.style.height = `${this.height}vh`;
@@ -56,7 +55,6 @@ class Game {
                 this.cheeseArray.push(new Cheese(this.gameScreen));
             }
         }
-
         ///Cat Obstacles
         const nextObstacles = []
        
@@ -98,9 +96,7 @@ class Game {
             this.navBar.style.visibility = 'hidden'
         } 
 
-        this.animateId = requestAnimationFrame(() => this.gameloop())
-
-        
+        this.animateId = requestAnimationFrame(() => this.gameloop())       
     }  
 }
 

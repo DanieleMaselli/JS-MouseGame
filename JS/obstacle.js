@@ -9,8 +9,6 @@ class Obstacle {
         const minWidth = rect.left + 100;
         const minHeight = rect.top + 100;
         const bottom = rect.bottom - 110;
-        //console.log(bottom)
-        ///this.cheeseArray = [];
         let x = getRandomInt(minWidth,maxWidth);
         let y = getRandomInt(minHeight,maxHeight);
         this.width = 180;
@@ -34,13 +32,10 @@ class Obstacle {
     move() {
 
         this.top += 4
-
         if(this.top >= this.bottom) {
             this.element.style.visibility = 'hidden'
         }
-        
-        this.updatePosition()
-   
+        this.updatePosition()  
     }
 
     updatePosition() {
