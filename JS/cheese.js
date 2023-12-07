@@ -11,7 +11,7 @@ class Cheese {
         ///this.cheeseArray = [];
         let x = getRandomInt(minWidth,maxWidth);
         let y = getRandomInt(minHeight,maxHeight);
-        this.width = 100;
+        this.width = 60;
         this.top = y;
         this.left = x;
         this.element = document.createElement('img');

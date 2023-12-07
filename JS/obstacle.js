@@ -31,7 +31,7 @@ class Obstacle {
     }
 
     move() {
-       
+        
         this.top += 4
 
         if(this.top >= this.bottom) {
@@ -41,7 +41,7 @@ class Obstacle {
         this.updatePosition()
    
     }
-    
+
     updatePosition() {
         this.element.style.left = `${this.left}px`
         this.element.style.top = `${this.top}px`

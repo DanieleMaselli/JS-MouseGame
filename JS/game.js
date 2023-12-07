@@ -5,7 +5,7 @@ class Game {
         this.endScreen = document.getElementById('end-screen')
         this.navBar = document.getElementById('navBar')
         this.height = 80;
-        this.width = 100;
+        //this.width = 100;
         this.mouse = null;
         this.animateId = null;
         this.gameScreen.style.height = `${this.height}vh`;
@@ -13,15 +13,12 @@ class Game {
         this.score = 0;
         this.lives = 3;
         this.isGameOver = false;
-        //this.cheese = new Cheese(this.gameScreen);
+        this.poisonStarted = false;
         this.obstacles = [];
         this.cheeseArray = [];
         
         for (let i = 0; i < 5; i++) {
-           // new Cheese(this.gameScreen);
-            //console.log(this.cheeseArray)
-            this.cheeseArray.push(new Cheese(this.gameScreen));      
-            //console.log(this.cheeseArray)              
+            this.cheeseArray.push(new Cheese(this.gameScreen));              
         }
     }
 
@@ -40,11 +37,12 @@ class Game {
     }
 
     gameloop(){
-        
+
         //let audio = new Audio('catAudio.wav');
         document.getElementById('score').innerText = this.score
         document.getElementById('lives').innerText = this.lives
-
+        
+        ///Cheese for the mouse
         this.cheeseArray.forEach((cheese, index) => {
             if (this.mouse.eatCheese(cheese)) {
                 console.log('collision');
@@ -59,17 +57,17 @@ class Game {
                 this.cheeseArray.push(new Cheese(this.gameScreen));
             }
         }
-        
+
         ///Cat Obstacles
         const nextObstacles = []
-
+       
         this.obstacles.forEach(currentObstacle => {
             currentObstacle.move()
         })
 
         this.obstacles.forEach((obst) => {
             if(this.mouse.obstacleCat(obst)){
-                console.log('collision cat')
+                //console.log('collision cat')
                 obst.element.remove()
                 //audio.play();
                 this.lives -= 1;
@@ -84,11 +82,21 @@ class Game {
             this.obstacles.push(new Obstacle(this.gameScreen))
         }
 
+        const mouseWidth = this.mouse.getWidth();
+        console.log('Mouse width:', mouseWidth);
+
+        if (this.score === 10) {
+            this.mouse.setWidth(60);        
+        } else if(this.score === 20) {
+            this.mouse.setWidth(80);
+        } else if (this.score === 20) {
+            this.mouse.setWidth(100);
+        }
+     
         if(this.isGameOver) {
             this.endScreen.style.display = 'flex'
             this.gameScreen.style.display = 'none'
             this.navBar.style.visibility = 'hidden'
-            
         }
 
         this.animateId = requestAnimationFrame(() => this.gameloop())

@@ -29,7 +29,9 @@ main{
 nav {
     display: flex;
     visibility: hidden;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    align-items: center;
+    align-content: center;
     justify-content: space-between;
     padding: 30px;
 }
@@ -38,8 +40,42 @@ ul{
     font-weight: 600;
 }
 
+.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px
+
+}
+
 .score{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
     font-weight: 600;
+
+}
+
+.live{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    font-weight: 600;
+}
+
+.score-img {
+    width: 40px;
+}
+
+.live-img{
+    width: 25px;
 }
 
 span{
@@ -105,6 +141,7 @@ button:hover {
     background-color: #1A1A1A;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
+  
 
 }
 
