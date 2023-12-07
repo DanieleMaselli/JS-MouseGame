@@ -95,7 +95,7 @@ class Game {
             this.navBar.style.visibility = 'hidden'
         } 
 
-        if(this.score === 2) {
+        if(this.score === 30) {
             this.winScreen.style.display = 'flex'
             this.gameScreen.style.display = 'none'
             this.navBar.style.visibility = 'hidden'
