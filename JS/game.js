@@ -11,8 +11,9 @@ class Game {
         this.gameScreen.style.height = `${this.height}vh`;
         this.gameScreen.style.width = `${this.width}vw`;
         this.score = 0;
-        this.lives = 3;
+        this.lives = 1000;
         this.isGameOver = false;
+        this.winTheGame = false;
         this.poisonStarted = false;
         this.obstacles = [];
         this.cheeseArray = [];
@@ -38,11 +39,9 @@ class Game {
 
     gameloop(){
 
-        //let audio = new Audio('catAudio.wav');
+        let audio = new Audio('cat.wav');
         document.getElementById('score').innerText = this.score
         document.getElementById('lives').innerText = this.lives
-        
-        ///Cheese for the mouse
         this.cheeseArray.forEach((cheese, index) => {
             if (this.mouse.eatCheese(cheese)) {
                 console.log('collision');
@@ -69,7 +68,7 @@ class Game {
             if(this.mouse.obstacleCat(obst)){
                 //console.log('collision cat')
                 obst.element.remove()
-                //audio.play();
+                audio.play();
                 this.lives -= 1;
                 if (this.lives <= 0) {
                     this.isGameOver = true
@@ -97,7 +96,7 @@ class Game {
             this.endScreen.style.display = 'flex'
             this.gameScreen.style.display = 'none'
             this.navBar.style.visibility = 'hidden'
-        }
+        } 
 
         this.animateId = requestAnimationFrame(() => this.gameloop())
 

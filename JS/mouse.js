@@ -3,8 +3,8 @@ class Mouse {
         this.gameScreen = gameScreen;
         this.mouseX = 0;
         this.mouseY = 0;
+        this.rotation = 0;
         this.width = 50;
-
         this.element = document.createElement('img');
         this.element.src = 'Images/mice.png';
         this.element.style.position = 'absolute';
@@ -16,18 +16,14 @@ class Mouse {
             this.mouseX = event.clientX;
             this.mouseY = event.clientY;
             this.move();  
-            
                    
         });
-
-        if(this.score === 10){
-          this.width === 100
-        }
     }
 
     move(){
         this.element.style.left = this.mouseX + 'px';
-	      this.element.style.top = this.mouseY + 'px';     
+	      this.element.style.top = this.mouseY + 'px'; 
+  
     }
 
     

@@ -13,7 +13,7 @@ class Obstacle {
         ///this.cheeseArray = [];
         let x = getRandomInt(minWidth,maxWidth);
         let y = getRandomInt(minHeight,maxHeight);
-        this.width = 200;
+        this.width = 180;
         this.top = maxHeight;
         this.bottom = bottom
         this.left = Math.floor(Math.random() * maxWidth)
@@ -22,6 +22,7 @@ class Obstacle {
         //console.log(this.element)
         this.element.src = 'Images/cat.png';
         this.element.classList = 'cat'
+        this.element.style.filter = '';
         this.element.style.position = 'absolute';
         this.element.style.width = `${this.width}px`;
         this.element.style.top = `${this.top}px`;
@@ -31,7 +32,7 @@ class Obstacle {
     }
 
     move() {
-        
+
         this.top += 4
 
         if(this.top >= this.bottom) {
