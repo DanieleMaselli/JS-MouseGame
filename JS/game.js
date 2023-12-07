@@ -3,6 +3,7 @@ class Game {
         this.gameScreen = document.getElementById('game-screen')
         this.startScreen = document.getElementById('start-screen')
         this.endScreen = document.getElementById('end-screen')
+        this.winScreen = document.getElementById('win-screen')
         this.navBar = document.getElementById('navBar')
         this.height = 80;
         this.mouse = null;
@@ -12,8 +13,6 @@ class Game {
         this.score = 0;
         this.lives = 5;
         this.isGameOver = false;
-        this.winTheGame = false;
-        this.poisonStarted = false;
         this.obstacles = [];
         this.cheeseArray = [];
         
@@ -31,6 +30,7 @@ class Game {
         this.gameScreen.style.visibility = 'visible'
         this.navBar.style.visibility = 'visible'
         this.startScreen.style.display = 'none'
+        this.winScreen.style.visibility = 'none'
         this.endScreen.style.visibility = 'none'
         this.mouse = new Mouse(this.gameScreen)
         this.gameloop()  
@@ -56,8 +56,6 @@ class Game {
             }
         }
         ///Cat Obstacles
-        const nextObstacles = []
-       
         this.obstacles.forEach(currentObstacle => {
             currentObstacle.move()
         })
@@ -86,12 +84,19 @@ class Game {
             this.mouse.setWidth(60);        
         } else if(this.score === 20) {
             this.mouse.setWidth(80);
-        } else if (this.score === 20) {
-            this.mouse.setWidth(100);
+        } else if (this.score === 30) {
+            this.mouse.setWidth(90);
         }
      
         if(this.isGameOver) {
+
             this.endScreen.style.display = 'flex'
+            this.gameScreen.style.display = 'none'
+            this.navBar.style.visibility = 'hidden'
+        } 
+
+        if(this.score === 30) {
+            this.winScreen.style.display = 'flex'
             this.gameScreen.style.display = 'none'
             this.navBar.style.visibility = 'hidden'
         } 

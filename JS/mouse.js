@@ -25,7 +25,6 @@ class Mouse {
 	      this.element.style.top = this.mouseY + 'px'; 
   
     }
-
     
     getWidth(){
       return this.width;
@@ -80,26 +79,7 @@ class Mouse {
     }
 
   }
-
-  poisonTrap(poison) {
-    const playerRect = this.element.getBoundingClientRect()
-    const poisonRect = poison.element.getBoundingClientRect()
  
-         
-    if (
-      playerRect.left < poisonRect.right &&
-      playerRect.right > poisonRect.left &&
-      playerRect.top < poisonRect.bottom &&
-      playerRect.bottom > poisonRect.top
-    ) {
-  
-  return true
-  } else {
-  return false
-  }
-
-}
-    
 }
 
 
