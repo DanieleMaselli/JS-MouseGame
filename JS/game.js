@@ -11,7 +11,7 @@ class Game {
         this.gameScreen.style.height = `${this.height}vh`;
         this.gameScreen.style.width = `${this.width}vw`;
         this.score = 0;
-        this.lives = 1000;
+        this.lives = 5;
         this.isGameOver = false;
         this.winTheGame = false;
         this.poisonStarted = false;

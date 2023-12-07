@@ -33,7 +33,6 @@ class Mouse {
 
     setWidth(newWidth) {
       this.width = newWidth;
-      //this.element.style.transition = '500ms'
       this.element.style.width = `${this.width}px`;
    
     }
@@ -47,7 +46,7 @@ class Mouse {
     eatCheese(cheese) {
         const playerRect = this.element.getBoundingClientRect()
         const cheeseRect = cheese.element.getBoundingClientRect()
-        //const obstacle = obstacle.element.getBoundingClientRect();
+ 
              
         if (
           playerRect.left < cheeseRect.right &&
@@ -56,7 +55,6 @@ class Mouse {
           playerRect.bottom > cheeseRect.top
         ) {
       
-      //cheese.element.remove()
       return true
       } else {
       return false
@@ -68,8 +66,7 @@ class Mouse {
     obstacleCat(obst) {
       const playerRect = this.element.getBoundingClientRect()
       const obstacleRect = obst.element.getBoundingClientRect()
-      //const obstacle = obstacle.element.getBoundingClientRect();
-           
+            
       if (
         playerRect.left < obstacleRect.right &&
         playerRect.right > obstacleRect.left &&
@@ -77,7 +74,6 @@ class Mouse {
         playerRect.bottom > obstacleRect.top
       ) {
     
-    //cheese.element.remove()
     return true
     } else {
     return false
@@ -88,7 +84,7 @@ class Mouse {
   poisonTrap(poison) {
     const playerRect = this.element.getBoundingClientRect()
     const poisonRect = poison.element.getBoundingClientRect()
-    //const obstacle = obstacle.element.getBoundingClientRect();
+ 
          
     if (
       playerRect.left < poisonRect.right &&
@@ -97,7 +93,6 @@ class Mouse {
       playerRect.bottom > poisonRect.top
     ) {
   
-  //cheese.element.remove()
   return true
   } else {
   return false

@@ -1,10 +1,8 @@
 # LAB Project | CheesyMouse
 
-<details>
-  <summary>
-   <h2>Simpel 2D Game</h2>
-  </summary>
-</details>
+
+The following project is a simple 2D game using plain Javascript, HTML and CSS.
+
 
 
 
